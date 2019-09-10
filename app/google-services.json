@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "314027069294",
+    "firebase_url": "https://islamic-app-27821.firebaseio.com",
+    "project_id": "islamic-app-27821",
+    "storage_bucket": "islamic-app-27821.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:314027069294:android:471a83c3165c9c09",
+        "android_client_info": {
+          "package_name": "com.example.islamicapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "314027069294-8jcnklqoh22rcg7bpon4dnbmapuj5t6j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.islamicapp",
+            "certificate_hash": "6fb6ef25c13b59f33be0a275c5a98054264eeaa0"
+          }
+        },
+        {
+          "client_id": "314027069294-n9ortjj3t2o2ja3j7v9qo24mqu140e9l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCYWdK0BR_zDuFWPfwfvONaKljaqpqRqQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "314027069294-n9ortjj3t2o2ja3j7v9qo24mqu140e9l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

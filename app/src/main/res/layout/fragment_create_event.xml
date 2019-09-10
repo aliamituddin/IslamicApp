@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:layout_weight="10"
+  >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        >
+        <EditText
+            android:id="@+id/EventTitle"
+            android:layout_width="300dp"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:background="@drawable/edittext_round"
+            android:padding="5dp"
+            android:lines="1"
+            android:inputType="text"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:layout_margin="10dp"
+            android:hint="Event Title"
+            android:layout_gravity="center"
+            />
+
+        <EditText
+            android:id="@+id/eventDes"
+            android:layout_width="300dp"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:background="@drawable/edittext_round"
+            android:padding="5dp"
+            android:gravity="top|left"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            android:lines="5"
+            android:hint="Description"
+            android:scrollbars="none"
+            />
+
+        <EditText
+            android:id="@+id/eventAddress"
+            android:layout_width="300dp"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:layout_weight="2"
+            android:background="@drawable/edittext_round"
+            android:gravity="top|left"
+            android:hint="Address"
+            android:lines="3"
+            android:padding="5dp"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
+        <TextView
+            android:id="@+id/datePicker"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Select Date"
+            android:textSize="18sp"
+            android:padding="10dp"
+            android:background="@drawable/edittext_round"
+            android:gravity="center"
+            android:layout_marginStart="5dp"/>
+        <TextView
+            android:id="@+id/timePicker"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Select Time"
+            android:textSize="18sp"
+            android:padding="10dp"
+            android:background="@drawable/edittext_round"
+            android:gravity="center"
+            android:layout_marginStart="5dp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <Spinner
+                android:id="@+id/sectSpinner"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:background="@drawable/edittext_round"
+                android:layout_marginStart="5dp"
+                android:textAlignment="center"
+                android:entries="@array/sect">
+
+            </Spinner>
+            <Spinner
+                android:id="@+id/citySpinner"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:background="@drawable/edittext_round"
+                android:layout_marginStart="5dp"
+                android:textAlignment="center"
+                android:entries="@array/city">
+
+            </Spinner>
+<!--            <TextView-->
+<!--                android:id="@+id/sectPicker"-->
+<!--                android:layout_width="120dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Select Sect"-->
+<!--                android:textSize="18sp"-->
+<!--                android:padding="10dp"-->
+<!--                android:background="@drawable/edittext_round"-->
+<!--                android:gravity="center"-->
+
+<!--                android:layout_marginStart="5dp"/>-->
+<!--            <TextView-->
+<!--                android:id="@+id/cityPicker"-->
+<!--                android:layout_width="120dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Select City"-->
+<!--                android:textSize="18sp"-->
+<!--                android:padding="10dp"-->
+<!--                android:background="@drawable/edittext_round"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_marginStart="5dp"/>-->
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btnPostEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+                    android:layout_weight="1"
+            android:text="Create"
+            android:paddingHorizontal="50dp"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+                    android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:background="@drawable/btn_round"
+            android:onClick="btnWazaif"
+            />
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
