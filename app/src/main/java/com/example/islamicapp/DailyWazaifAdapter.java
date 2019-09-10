@@ -55,7 +55,7 @@ private FragmentManager mFragmentManager;
 
 
             Intent intent = new Intent().setClass(view.getContext(), Counter.class);
-
+//comment
             intent.putExtra("id",model.getId());
             intent.putExtra("ayat",model.getWazifa());
             intent.putExtra("num",model.getNum());
