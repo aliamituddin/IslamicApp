@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.islamicapp.Models.User;
@@ -23,6 +24,7 @@ import java.util.Objects;
 public class Signup extends AppCompatActivity {
     protected EditText Name, EmailAddress,Password, CPassword;
     protected FirebaseAuth auth;
+    private Spinner secSinner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +34,7 @@ public class Signup extends AppCompatActivity {
         EmailAddress = findViewById(R.id.email);
         Password = findViewById(R.id.password);
         CPassword = findViewById(R.id.cPassword);
-
+        secSinner = findViewById(R.id.selectSect);
         auth = FirebaseAuth.getInstance();
 
     }
@@ -49,6 +51,7 @@ public class Signup extends AppCompatActivity {
        String emai = EmailAddress.getText().toString();
        String password = Password.getText().toString();
        String cPassword = CPassword.getText().toString();
+       final String sect = secSinner.getSelectedItem().toString();
 
        if (!cPassword.equals(password)){
            CPassword.setError("Password doesn't match");
@@ -84,7 +87,7 @@ public class Signup extends AppCompatActivity {
                 showErrorDialog("There was a problem in signing up");
             }else {
                 User    user   = new User(
-                        name
+                        name,sect
                 );
                 FirebaseDatabase.getInstance().getReference("Users").child(Objects.requireNonNull(auth.getUid())).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override

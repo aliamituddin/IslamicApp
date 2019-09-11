@@ -29,7 +29,7 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Daily extends Fragment {
+public class    Daily extends Fragment {
 
     private RecyclerView dailyRv;
 ArrayList<WazifaModel> wazaifList;

@@ -82,8 +82,8 @@ public class Profile extends Fragment {
 
                     sName = dataSnapshot1.child("name").getValue(String.class);
                     sImageUri = dataSnapshot1.child("ImageUri").getValue(String.class);
-                    if (dataSnapshot1.hasChild("Sect")){
-                        sSect = dataSnapshot1.child("Sect").getValue(String.class);
+                    if (dataSnapshot1.hasChild("sect")){
+                        sSect = dataSnapshot1.child("sect").getValue(String.class);
 
 
                 email.setText(mUser.getEmail());
@@ -92,17 +92,21 @@ public class Profile extends Fragment {
 
                 }
                 email.setText(mUser.getEmail());
-                if (sSect.equals("Shia")){
+                if (sSect.equals("All")){
 
                     sectSpinner.setSelection(0);
                 }
-                if (sSect.equals("Sunni")){
+                if (sSect.equals("Shia")){
 
                     sectSpinner.setSelection(1);
                 }
-                if (sSect.equals("Wahabi")){
+                if (sSect.equals("Sunni")){
 
                     sectSpinner.setSelection(2);
+                }
+                if (sSect.equals("Wahabi")){
+
+                    sectSpinner.setSelection(3);
                 }
 
                 name.setText(sName);
@@ -122,7 +126,7 @@ public class Profile extends Fragment {
             public void onClick(View view) {
 
                 newSect = sectSpinner.getSelectedItem().toString();
-                mReference.child("Users").child(uid).child("Sect").setValue(newSect);
+                mReference.child("Users").child(uid).child("sect").setValue(newSect);
 
                 newName = name.getText().toString();
 

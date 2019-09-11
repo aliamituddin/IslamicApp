@@ -6,6 +6,11 @@ private String Name;
 private String ImageUri;
 private String Sect;
 
+    public User(String name, String sect) {
+        Name = name;
+        Sect = sect;
+    }
+
     public User(String name, String imageUri, String sect) {
         Name = name;
         ImageUri = imageUri;

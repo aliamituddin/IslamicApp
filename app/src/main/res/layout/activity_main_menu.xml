@@ -46,8 +46,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="60sp"
-                        android:src="@drawable/wazaif" />
-
+/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -75,8 +74,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="60sp"
-                        android:src="@drawable/islam" />
-
+/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -111,8 +109,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="60sp"
-                        android:src="@drawable/myevnet" />
-
+/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -141,8 +138,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="60sp"
-                        android:src="@drawable/quran" />
-
+/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -178,8 +174,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="60sp"
-                        android:src="@drawable/information" />
-
+/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -208,8 +203,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="60sp"
-                        android:src="@drawable/prayer" />
-
+/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -240,8 +234,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="60sp"
-                    android:src="@drawable/mosque" />
-
+/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

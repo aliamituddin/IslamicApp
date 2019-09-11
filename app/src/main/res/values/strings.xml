@@ -8,7 +8,7 @@
 
     </array>
     <array name="sect">
-
+        <item>All</item>
         <item>Shia</item>
         <item>Sunni</item>
         <item>Wahabi</item>
@@ -33,6 +33,8 @@
     <string name="open_nav">open nav drawer</string>
     <string name="close_nav">close nav drawer</string>
     <string name="title_activity_main">Main</string>
+    <string name="action_send">Send</string>
+    <string name="prompt_msg">Type a message</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

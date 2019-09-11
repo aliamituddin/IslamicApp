@@ -4,6 +4,7 @@ import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
@@ -24,6 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -36,7 +38,7 @@ public class EventOpen extends AppCompatActivity {
 
     boolean cancel;
 
-    Button btnInterested;
+    Button btnInterested,btnInvite;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +54,8 @@ public class EventOpen extends AppCompatActivity {
         addressTv = findViewById(R.id.address);
         addressTv.setMovementMethod(new ScrollingMovementMethod());
         btnInterested = findViewById(R.id.btnInterested);
+        btnInvite = findViewById(R.id.btnInvite);
+        btnInvite.setVisibility(View.GONE);
         title = getIntent().getStringExtra("title");
         city = getIntent().getStringExtra("city");
         sect = getIntent().getStringExtra("sect");
@@ -81,7 +85,10 @@ public class EventOpen extends AppCompatActivity {
             String OID = dataSnapshot.getValue(String.class);
             if (OID.equals(uid)){
                 btnInterested.setVisibility(View.GONE);
+                btnInvite.setVisibility(View.VISIBLE);
+
             }
+
 
 
 
@@ -158,6 +165,39 @@ public class EventOpen extends AppCompatActivity {
                 Toast.makeText(EventOpen.this, "Canceled", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    public void btnInvite(View view){
+
+        if (!title.isEmpty()&!city.isEmpty()&!time.isEmpty()&!date.isEmpty()&!desc.isEmpty()&!address.isEmpty()){
+
+            Intent intent = new Intent(this,Invitation.class);
+
+            intent.putExtra("title",title);
+            intent.putExtra("city",city);
+            intent.putExtra("sect",sect);
+            intent.putExtra("address",address);
+            intent.putExtra("description",desc);
+            intent.putExtra("time",time);
+            intent.putExtra("date",date);
+            startActivity(intent);
+
+//            Intent sendIntent = new Intent();
+//               sendIntent.setAction(Intent.ACTION_SEND);
+//               sendIntent.putExtra(Intent.EXTRA_TEXT,  "Title : "+title+System.lineSeparator()+"Description :"+desc
+//                       +System.lineSeparator()+ "Date :"+ date+System.lineSeparator()+"Time :"+time
+//                       +System.lineSeparator()+"City : "+city +System.lineSeparator() +"Address : "+address);
+//               sendIntent.setType("text/plain");
+//               startActivity(sendIntent);
+
+
+//            Intent intent= new Intent();
+//            intent.setAction(Intent.ACTION_SEND);
+//            intent.putExtra(Intent.EXTRA_TEXT, "Hello");
+//            intent.setType("text/plain");
+//            intent.setPackage("com.facebook.orca");
+//            startActivity(intent);
+
+        }
     }
 
 }

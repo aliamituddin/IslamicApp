@@ -203,17 +203,37 @@
             android:scrollbars="vertical"
             android:textSize="20sp" />
     </LinearLayout>
-    <Button
-        android:id="@+id/btnInterested"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-       android:layout_marginTop="30dp"
-        android:background="@drawable/btn_round"
-        android:onClick="btnInterested"
-        android:paddingHorizontal="20dp"
-        android:layout_gravity="center"
-        android:text="Interested"
+        android:gravity="center"
+        >
+        <Button
+            android:id="@+id/btnInterested"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/btn_round"
+            android:onClick="btnInterested"
+            android:paddingHorizontal="20dp"
+            android:layout_gravity="center"
+            android:text="Interested"
 
-        android:textAlignment="center"
-        android:textColor="@android:color/white" />
+            android:textAlignment="center"
+            android:textColor="@android:color/white" />
+        <Button
+            android:id="@+id/btnInvite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/btn_round"
+            android:onClick="btnInvite"
+            android:paddingHorizontal="20dp"
+            android:layout_gravity="center"
+            android:text="Invite"
+
+            android:textAlignment="center"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
+
 </LinearLayout>
