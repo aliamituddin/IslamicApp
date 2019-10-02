@@ -6,27 +6,24 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+
             android:title="Wazaif" />
         <item
             android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
+
             android:title="Events" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
+
             android:title="MyEvents" />
         <item
             android:id="@+id/nav_tools"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Profil" />
+            android:title="Profile" />
         <item
             android:id="@+id/nav_share"
-            android:icon="@drawable/ic_menu_share"
             android:title="My Record" />
         <item
             android:id="@+id/nav_send"
-            android:icon="@drawable/ic_menu_send"
             android:title="Online Counselling" />
     </group>
 

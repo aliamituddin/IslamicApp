@@ -11,14 +11,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.islamicapp.Models.WazifaModel;
 import com.example.islamicapp.R;
+import com.example.islamicapp.RecordModel;
 
 import java.util.ArrayList;
 
 public class MyRecordAdapter extends RecyclerView.Adapter<MyRecordAdapter.ViewHolder> {
-    private ArrayList<WazifaModel> recordList;
+    private ArrayList<RecordModel> recordList;
     private Context mContext;
 
-    public MyRecordAdapter( Context context,ArrayList<WazifaModel> recordList) {
+    public  MyRecordAdapter( Context context,ArrayList<RecordModel> recordList) {
         this.recordList = recordList;
         mContext = context;
     }
@@ -35,7 +36,7 @@ public class MyRecordAdapter extends RecyclerView.Adapter<MyRecordAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        WazifaModel model = recordList.get(position);
+        RecordModel model = recordList.get(position);
         holder.tvPurpose.setText(model.getPurpose());
         holder.tvWazifa.setText(model.getWazifa());
         holder.tvTrans.setText(model.getTranslation());

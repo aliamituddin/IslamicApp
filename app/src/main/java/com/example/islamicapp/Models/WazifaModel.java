@@ -1,19 +1,19 @@
 package com.example.islamicapp.Models;
 
 public class    WazifaModel {
-    private String Purpose,Sect,Translation,Wazifa,Id,Num,Type;
+    private String Purpose,Sect,Translation,Wazifa,Id,Num,Type,UID;
 
     public WazifaModel() {
     }
 
-    public WazifaModel(String purpose, String sect, String translation, String wazifa, String id,String num,String type) {
+    public WazifaModel(String purpose, String translation, String wazifa, String id,String num,String type) {
         Purpose = purpose;
-        Sect = sect;
         Translation = translation;
         Wazifa = wazifa;
         Id = id;
         Num = num;
         Type = type;
+
 
     }
 

@@ -142,7 +142,7 @@ public class Counter extends AppCompatActivity {
 
 
 
-        Toast.makeText(this, ""+id, Toast.LENGTH_SHORT).show();
+
         btnCounter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -162,7 +162,15 @@ public class Counter extends AppCompatActivity {
 
                        days++;
                        if (days<2) {
-                           mDatabaseReference.child(UID).child("Wazaif").child(id).child("Status").setValue("completed");
+
+                           RecordModel recordModel = new RecordModel(
+                                   purpose,trans,aayat,type,UID);
+
+                           mDatabaseReference.child(UID).child("Record").push().setValue(recordModel);
+
+                           mDatabaseReference.child(UID).child("Wazaif").child(id).child("Days").setValue("0");
+                           mDatabaseReference.child(UID).child("Wazaif").child(id).child("Counted").setValue("0");
+                           mDatabaseReference.child(UID).child("Wazaif").child(id).child("Status").setValue("pending");
                        }
 
                    }
@@ -187,7 +195,14 @@ public class Counter extends AppCompatActivity {
                             mDatabaseReference.child(UID).child("Wazaif").child(id).child("Counted").setValue("0");
                         }
                         else{
-                            mDatabaseReference.child(UID).child("Wazaif").child(id).child("Status").setValue("completed");
+                            RecordModel recordModel = new RecordModel(
+                                    purpose,trans,aayat,type,UID);
+
+                            mDatabaseReference.child(UID).child("Record").push().setValue(recordModel);
+
+                            mDatabaseReference.child(UID).child("Wazaif").child(id).child("Days").setValue("0");
+                            mDatabaseReference.child(UID).child("Wazaif").child(id).child("Counted").setValue("0");
+                            mDatabaseReference.child(UID).child("Wazaif").child(id).child("Status").setValue("pending");
 
 
                         }
@@ -213,8 +228,14 @@ public class Counter extends AppCompatActivity {
                             mDatabaseReference.child(UID).child("Wazaif").child(id).child("Counted").setValue("0");
                         }
                         else{
-                            mDatabaseReference.child(UID).child("Wazaif").child(id).child("Status").setValue("completed");
+                            RecordModel recordModel = new RecordModel(
+                                    purpose,trans,aayat,type,UID);
 
+                            mDatabaseReference.child(UID).child("Record").push().setValue(recordModel);
+
+                            mDatabaseReference.child(UID).child("Wazaif").child(id).child("Days").setValue("0");
+                            mDatabaseReference.child(UID).child("Wazaif").child(id).child("Counted").setValue("0");
+                            mDatabaseReference.child(UID).child("Wazaif").child(id).child("Status").setValue("pending");
                         }
 
                     }

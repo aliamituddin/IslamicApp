@@ -32,12 +32,12 @@
     <fragment
         android:id="@+id/nav_share"
         android:name="com.example.islamicapp.ui.MyRecord.MyRecord"
-        android:label="@string/menu_share"
+        android:label="Record"
         tools:layout="@layout/fragment_share" />
 
     <fragment
         android:id="@+id/nav_send"
         android:name="com.example.islamicapp.ui.send.OnlineCounselling"
-        android:label="@string/menu_send"
+        android:label="Online Counselling"
         tools:layout="@layout/fragment_send" />
 </navigation>

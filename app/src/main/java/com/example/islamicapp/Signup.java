@@ -59,6 +59,11 @@ public class Signup extends AppCompatActivity {
            focusView = CPassword;
 
        }
+       if (password.length()<6){
+           Password.setError("It must be more than 6");
+           cancel = true;
+           focusView = Password;
+       }
         if (password.isEmpty()){
             Password.setError("Must enter password");
             cancel = true;
