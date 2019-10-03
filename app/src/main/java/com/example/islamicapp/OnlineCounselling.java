@@ -52,9 +52,10 @@ public class OnlineCounselling extends Fragment {
     private ImageButton mSendButton;
     private DatabaseReference mDatabaseReference;
     private FirebaseUser mFirebaseUser;
-
+    private ImageButton callButton;
     private FirebaseAuth mAuth;
     private ChatListAdapter mAdapter;
+
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -71,6 +72,15 @@ public class OnlineCounselling extends Fragment {
         mInputText = root.findViewById(R.id.messageInput);
         mSendButton = root.findViewById(R.id.sendButton);
         mChatListVeiw = root.findViewById(R.id.chat_list_view);
+        callButton = root.findViewById(R.id.callButton);
+
+        callButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),Calling.class);
+                startActivity(intent);
+            }
+        });
 
 
         getusername();
@@ -144,6 +154,7 @@ public class OnlineCounselling extends Fragment {
 
 
     }
+
 
 
 }

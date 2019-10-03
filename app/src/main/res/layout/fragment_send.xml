@@ -9,6 +9,7 @@
     android:background="@color/light_purple"
    >
 
+
     <ListView
         android:id="@+id/chat_list_view"
         android:layout_width="fill_parent"
@@ -18,6 +19,17 @@
         android:divider="@null"
         android:dividerHeight="0dp"
         android:transcriptMode="alwaysScroll" />
+    <ImageButton
+        android:id="@+id/callButton"
+        android:padding="10dp"
+        android:background="@drawable/circle_shape"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_menu_send"
+        android:layout_alignParentEnd="true"
+        android:onClick="callButton"
+        android:contentDescription="@string/action_send"/>
+
 
     <LinearLayout
         android:id="@+id/listFooter"
