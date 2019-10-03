@@ -1,7 +1,14 @@
-package com.example.islamicapp.ui.send;
+package com.example.islamicapp;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +21,9 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -36,7 +46,7 @@ import java.util.ArrayList;
 
 public class OnlineCounselling extends Fragment {
 
-    private String mDisplayName,uid;
+    private String mDisplayName, uid;
     private ListView mChatListVeiw;
     private EditText mInputText;
     private ImageButton mSendButton;
@@ -45,9 +55,6 @@ public class OnlineCounselling extends Fragment {
 
     private FirebaseAuth mAuth;
     private ChatListAdapter mAdapter;
-
-
-
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -66,24 +73,22 @@ public class OnlineCounselling extends Fragment {
         mChatListVeiw = root.findViewById(R.id.chat_list_view);
 
 
-
         getusername();
 
 
-       mSendButton.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
+        mSendButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-               if (!mInputText.getText().toString().isEmpty()){
+                if (!mInputText.getText().toString().isEmpty()) {
 
-                  String mMsg = mInputText.getText().toString();
-                   sendMessage(mMsg,mDisplayName);
-               }
+                    String mMsg = mInputText.getText().toString();
+                    sendMessage(mMsg, mDisplayName);
+                }
 
-           }
+            }
 
-       });
-
+        });
 
 
         return root;
@@ -92,7 +97,7 @@ public class OnlineCounselling extends Fragment {
 
     private void sendMessage(String displayName, String msg) {
 
-        InstantMessage chat = new InstantMessage(displayName,msg);
+        InstantMessage chat = new InstantMessage(displayName, msg);
 
         mDatabaseReference.child("Users").child("Counselling").push().setValue(chat);
         mInputText.setText("");
@@ -120,23 +125,25 @@ public class OnlineCounselling extends Fragment {
     public void onStart() {
         super.onStart();
 
-            mDatabaseReference.child("Users").child(uid).addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+        mDatabaseReference.child("Users").child(uid).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    String username = dataSnapshot.child("name").getValue(String.class);
+                String username = dataSnapshot.child("name").getValue(String.class);
 
-                    mAdapter = new ChatListAdapter(getActivity(), mDatabaseReference, username, uid);
-                    mChatListVeiw.setAdapter(mAdapter);
+                mAdapter = new ChatListAdapter(getActivity(), mDatabaseReference, username, uid);
+                mChatListVeiw.setAdapter(mAdapter);
 
-                }
+            }
 
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                }
-            });
+            }
+        });
 
 
     }
+
+
 }

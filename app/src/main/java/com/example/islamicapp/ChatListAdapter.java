@@ -1,6 +1,7 @@
 package com.example.islamicapp;
 
 import android.app.Activity;
+import android.app.Notification;
 import android.content.Context;
 import android.graphics.Color;
 import android.view.Gravity;
@@ -13,6 +14,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,6 +34,23 @@ public class ChatListAdapter extends BaseAdapter {
     private ChildEventListener mListener = new ChildEventListener() {
         @Override
         public void onChildAdded(@NonNull DataSnapshot dataSnapshot,  String s) {
+            InstantMessage im =  dataSnapshot.getValue(InstantMessage.class);
+
+            String message = im.getMessage();
+            String aurthor = im.getAuthor();
+            if (!aurthor.equals(mDisplayName)) {
+                NotificationManagerCompat notificationManager;
+                notificationManager = NotificationManagerCompat.from(mActivity);
+                Notification notification = new NotificationCompat.Builder(mActivity)
+                        .setContentTitle(aurthor)
+                        .setContentText(message)
+                        .setSmallIcon(R.drawable.ic_stat_name)
+
+                        .build();
+
+                notificationManager.notify(null, 0, notification);
+
+            }
             mSnapshotList.add(dataSnapshot);
             notifyDataSetChanged();
         }

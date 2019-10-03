@@ -37,7 +37,7 @@
 
     <fragment
         android:id="@+id/nav_send"
-        android:name="com.example.islamicapp.ui.send.OnlineCounselling"
+        android:name="com.example.islamicapp.OnlineCounselling"
         android:label="Online Counselling"
         tools:layout="@layout/fragment_send" />
 </navigation>
