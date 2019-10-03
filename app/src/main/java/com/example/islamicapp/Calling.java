@@ -41,6 +41,7 @@ public class Calling extends AppCompatActivity implements Connector.IConnect {
             @Override
             public void onClick(View v) {
                 Start();
+
                 start.setClickable(false);
             }
         });
