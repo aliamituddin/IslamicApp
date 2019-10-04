@@ -81,7 +81,6 @@ public class Calling extends AppCompatActivity implements Connector.IConnect {
 
     public void Disconnect() {
         vc.disconnect();
-        finish();
         Intent intent=new Intent(this,OnlineCounselling.class);
         startActivity(intent);
     };

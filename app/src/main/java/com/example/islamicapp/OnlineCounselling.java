@@ -1,11 +1,13 @@
 package com.example.islamicapp;
 
+import android.Manifest;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
@@ -77,8 +79,7 @@ public class OnlineCounselling extends Fragment {
         callButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),Calling.class);
-                startActivity(intent);
+                checkforPermission();
             }
         });
 
@@ -152,6 +153,30 @@ public class OnlineCounselling extends Fragment {
             }
         });
 
+
+    }
+        public void checkforPermission(){
+        if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA)
+                != PackageManager.PERMISSION_GRANTED) {
+            Toast.makeText(getActivity(), "Camera permission not granted", Toast.LENGTH_SHORT).show();
+            // Permission is not granted
+        }
+        else if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.RECORD_AUDIO)
+                != PackageManager.PERMISSION_GRANTED) {
+            Toast.makeText(getActivity(), "Microphone permission not granted", Toast.LENGTH_SHORT).show();
+            // Permission is not granted
+        }
+        else if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.MODIFY_AUDIO_SETTINGS)
+                != PackageManager.PERMISSION_GRANTED) {
+            Toast.makeText(getActivity(), "Speaker permission not granted", Toast.LENGTH_SHORT).show();
+            // Permission is not granted
+
+        }
+
+        else {
+            Intent intent = new Intent(getActivity(), Calling.class);
+            startActivity(intent);
+        }
 
     }
 
